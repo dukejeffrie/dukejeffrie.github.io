@@ -1,0 +1,113 @@
+body, h1, h2 {
+  font-family: "Muli", sans-serif;
+}
+
+body {
+  font-size: 12pt;
+  margin: 0 1em;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section {
+  min-width: 32em;
+  max-width: 50%;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 34pt;
+  color: #666;
+  text-align: center;
+}
+.subtitle {
+  font-weight: lighter;
+  display: block;
+  font-size: 0.65em;
+  margin: 0;
+}
+
+h2 {
+  font-weight: normal;
+  margin-bottom: 1.2em;
+  font-size: 1.8em;
+}
+
+
+dl {
+  min-height: 8em;
+  position: relative;
+  margin: 1px 1px 0 0;
+  padding: 1.8em 2em 1.3em 170px;
+  color: white;
+  border-radius: 0 1em 0 0;
+}
+dl:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  border: 6px solid white;
+  border-radius: 70px;
+  width: 126px;
+  height: 126px;
+}
+dt {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 0.3em 0;
+  padding: 0;
+}
+dd {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+.example {
+  font-style: italic;
+  margin-bottom: 0;
+}
+.example:before {
+  display: inline;
+  content: "\201C";
+}
+.example:after {
+  display: inline;
+  content: "\201D";
+}
+
+.fallacy-mind h2 { color: #754d29; }
+.fallacy-mind dl { background-color: #754d29; }
+
+#anonymous-authority:before { background-image: url(i_auth1.png); }
+#authority:before { background-image: url(i_auth2.png); }
+#sheep:before { background-image: url(i_sheep.png); }
+#ignorance:before { background-image: url(i_ignor.png); }
+#incredulity:before { background-image: url(i_incred.png); }
+#money:before { background-image: url(i_money.png); }
+#novel:before { background-image: url(i_novel.png); }
+#pop:before { background-image: url(i_pop.png); }
+#prob:before { background-image: url(i_prob.png); }
+#tradition:before { background-image: url(i_tradition.png); }
+
+
+.fallacy-emotion h2 { color: #ea2227; }
+.fallacy-emotion dl { background-color: #ea2227; }
+
+#consequences:before { background-image: url(i_consequences.png); }
+#fear:before { background-image: url(i_fear.png); }
+#flattery:before { background-image: url(i_flattery.png); }
+#nature:before { background-image: url(i_nature.png); }
+#pity:before { background-image: url(i_pity.png); }
+#ridicule:before { background-image: url(i_ridicule.png); }
+#spite:before { background-image: url(i_spite.png); }
+#wishful:before { background-image: url(i_wishful.png); }
+
+.fallacy-deduction h2 { color: #918ac1; }
+.fallacy-deduction dl { background-color: #918ac1; }
