@@ -111,3 +111,17 @@ dd {
 
 .fallacy-deduction h2 { color: #918ac1; }
 .fallacy-deduction dl { background-color: #918ac1; }
+
+#anecdote:before { background-image: url(i_anecdote.png); }
+#composition:before { background-image: url(i_composition.png); }
+#decomposition:before { background-image: url(i_decomposition.png); }
+#design:before { background-image: url(i_design.png); }
+#gambler:before { background-image: url(i_gambler.png); }
+#hasty-generalization:before { background-image: url(i_hasty-generalization.png); }
+#conclusions:before { background-image: url(i_conclusions.png); }
+#middle-ground:before { background-image: url(i_middle-ground.png); }
+#perfectionist:before { background-image: url(i_perfectionist.png); }
+#relativist:before { background-image: url(i_relativist.png); }
+#spotlight:before { background-image: url(i_spotlight.png); }
+#sweeping-generalization:before { background-image: url(i_sweeping-generalization.png); }
+#undistributed-middle:before { background-image: url(i_undistributed-middle.png); }
