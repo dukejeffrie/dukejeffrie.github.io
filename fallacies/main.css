@@ -43,6 +43,7 @@ dl {
   margin: 1px 1px 0 0;
   padding: 1.8em 2em 1.3em 170px;
   color: white;
+  background-color: pink;
   border-radius: 0 1em 0 0;
 }
 dl:before {
@@ -125,3 +126,17 @@ dd {
 #spotlight:before { background-image: url(i_spotlight.png); }
 #sweeping-generalization:before { background-image: url(i_sweeping-generalization.png); }
 #undistributed-middle:before { background-image: url(i_undistributed-middle.png); }
+
+.fallacy-content h2 { color: #5eab8a; }
+.fallacy-content dl { background-color: #5eab8a; }
+
+#ad-hoc-rescue:before { background-image: url(i_ad-hoc-rescue.png); }
+#biased-generalization:before { background-image: url(i_biased-generalization.png); }
+#confirmation-bias:before { background-image: url(i_confirmation-bias.png); }
+#false-dilemma:before { background-image: url(i_false-dilemma.png); }
+#lie:before { background-image: url(i_lie.png); }
+#vividness:before { background-image: url(i_vividness.png); }
+#herring:before { background-image: url(i_herring.png); }
+#slippery:before { background-image: url(i_slippery.png); }
+#suppressed-evidence:before { background-image: url(i_suppressed-evidence.png); }
+#unfalsifiability:before { background-image: url(i_unfalsifiability.png); }
