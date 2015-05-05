@@ -140,3 +140,14 @@ dd {
 #slippery:before { background-image: url(i_slippery.png); }
 #suppressed-evidence:before { background-image: url(i_suppressed-evidence.png); }
 #unfalsifiability:before { background-image: url(i_unfalsifiability.png); }
+
+.fallacy-causes h2 { color: #eb008b; }
+.fallacy-causes dl { background-color: #eb008b; }
+
+#consequent:before { background-image: url(i_consequent.png); }
+#circular:before { background-image: url(i_circular.png); }
+#cum-hoc:before { background-image: url(i_cum-hoc.png); }
+#antecedent:before { background-image: url(i_antecedent.png); }
+#common-cause:before { background-image: url(i_common-cause.png); }
+#post-hoc:before { background-image: url(i_post-hoc.png); }
+#wrongs:before { background-image: url(i_wrongs.png); }
