@@ -151,3 +151,13 @@ dd {
 #common-cause:before { background-image: url(i_common-cause.png); }
 #post-hoc:before { background-image: url(i_post-hoc.png); }
 #wrongs:before { background-image: url(i_wrongs.png); }
+
+.fallacy-attack h2 { color: #188dcd; }
+.fallacy-attack dl { background-color: #188dcd; }
+
+#ad-hominem:before { background-image: url(i_ad-hominem.png); }
+#proof:before { background-image: url(i_proof.png); }
+#circumstantial-ad-hominem:before { background-image: url(i_circumstantial-ad-hominem.png); }
+#genetic:before { background-image: url(i_genetic.png); }
+#association:before { background-image: url(i_association.png); }
+#strawman:before { background-image: url(i_strawman.png); }
