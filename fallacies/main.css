@@ -86,78 +86,78 @@ dd {
 .fallacy-mind h2 { color: #754d29; }
 .fallacy-mind dl { background-color: #754d29; }
 
-#anonymous-authority:before { background-image: url(i_auth1.png); }
-#authority:before { background-image: url(i_auth2.png); }
-#sheep:before { background-image: url(i_sheep.png); }
-#ignorance:before { background-image: url(i_ignor.png); }
-#incredulity:before { background-image: url(i_incred.png); }
-#money:before { background-image: url(i_money.png); }
-#novel:before { background-image: url(i_novel.png); }
-#pop:before { background-image: url(i_pop.png); }
-#prob:before { background-image: url(i_prob.png); }
-#tradition:before { background-image: url(i_tradition.png); }
+#anonymous-authority:before { background-image: url(img/i_auth1.png); }
+#authority:before { background-image: url(img/i_auth2.png); }
+#sheep:before { background-image: url(img/i_sheep.png); }
+#ignorance:before { background-image: url(img/i_ignor.png); }
+#incredulity:before { background-image: url(img/i_incred.png); }
+#money:before { background-image: url(img/i_money.png); }
+#novel:before { background-image: url(img/i_novel.png); }
+#pop:before { background-image: url(img/i_pop.png); }
+#prob:before { background-image: url(img/i_prob.png); }
+#tradition:before { background-image: url(img/i_tradition.png); }
 
 
 .fallacy-emotion h2 { color: #ea2227; }
 .fallacy-emotion dl { background-color: #ea2227; }
 
-#consequences:before { background-image: url(i_consequences.png); }
-#fear:before { background-image: url(i_fear.png); }
-#flattery:before { background-image: url(i_flattery.png); }
-#nature:before { background-image: url(i_nature.png); }
-#pity:before { background-image: url(i_pity.png); }
-#ridicule:before { background-image: url(i_ridicule.png); }
-#spite:before { background-image: url(i_spite.png); }
-#wishful:before { background-image: url(i_wishful.png); }
+#consequences:before { background-image: url(img/i_consequences.png); }
+#fear:before { background-image: url(img/i_fear.png); }
+#flattery:before { background-image: url(img/i_flattery.png); }
+#nature:before { background-image: url(img/i_nature.png); }
+#pity:before { background-image: url(img/i_pity.png); }
+#ridicule:before { background-image: url(img/i_ridicule.png); }
+#spite:before { background-image: url(img/i_spite.png); }
+#wishful:before { background-image: url(img/i_wishful.png); }
 
 .fallacy-deduction h2 { color: #918ac1; }
 .fallacy-deduction dl { background-color: #918ac1; }
 
-#anecdote:before { background-image: url(i_anecdote.png); }
-#composition:before { background-image: url(i_composition.png); }
-#decomposition:before { background-image: url(i_decomposition.png); }
-#design:before { background-image: url(i_design.png); }
-#gambler:before { background-image: url(i_gambler.png); }
-#hasty-generalization:before { background-image: url(i_hasty-generalization.png); }
-#conclusions:before { background-image: url(i_conclusions.png); }
-#middle-ground:before { background-image: url(i_middle-ground.png); }
-#perfectionist:before { background-image: url(i_perfectionist.png); }
-#relativist:before { background-image: url(i_relativist.png); }
-#spotlight:before { background-image: url(i_spotlight.png); }
-#sweeping-generalization:before { background-image: url(i_sweeping-generalization.png); }
-#undistributed-middle:before { background-image: url(i_undistributed-middle.png); }
+#anecdote:before { background-image: url(img/i_anecdote.png); }
+#composition:before { background-image: url(img/i_composition.png); }
+#decomposition:before { background-image: url(img/i_decomposition.png); }
+#design:before { background-image: url(img/i_design.png); }
+#gambler:before { background-image: url(img/i_gambler.png); }
+#hasty-generalization:before { background-image: url(img/i_hasty-generalization.png); }
+#conclusions:before { background-image: url(img/i_conclusions.png); }
+#middle-ground:before { background-image: url(img/i_middle-ground.png); }
+#perfectionist:before { background-image: url(img/i_perfectionist.png); }
+#relativist:before { background-image: url(img/i_relativist.png); }
+#spotlight:before { background-image: url(img/i_spotlight.png); }
+#sweeping-generalization:before { background-image: url(img/i_sweeping-generalization.png); }
+#undistributed-middle:before { background-image: url(img/i_undistributed-middle.png); }
 
 .fallacy-content h2 { color: #5eab8a; }
 .fallacy-content dl { background-color: #5eab8a; }
 
-#ad-hoc-rescue:before { background-image: url(i_ad-hoc-rescue.png); }
-#biased-generalization:before { background-image: url(i_biased-generalization.png); }
-#confirmation-bias:before { background-image: url(i_confirmation-bias.png); }
-#false-dilemma:before { background-image: url(i_false-dilemma.png); }
-#lie:before { background-image: url(i_lie.png); }
-#vividness:before { background-image: url(i_vividness.png); }
-#herring:before { background-image: url(i_herring.png); }
-#slippery:before { background-image: url(i_slippery.png); }
-#suppressed-evidence:before { background-image: url(i_suppressed-evidence.png); }
-#unfalsifiability:before { background-image: url(i_unfalsifiability.png); }
+#ad-hoc-rescue:before { background-image: url(img/i_ad-hoc-rescue.png); }
+#biased-generalization:before { background-image: url(img/i_biased-generalization.png); }
+#confirmation-bias:before { background-image: url(img/i_confirmation-bias.png); }
+#false-dilemma:before { background-image: url(img/i_false-dilemma.png); }
+#lie:before { background-image: url(img/i_lie.png); }
+#vividness:before { background-image: url(img/i_vividness.png); }
+#herring:before { background-image: url(img/i_herring.png); }
+#slippery:before { background-image: url(img/i_slippery.png); }
+#suppressed-evidence:before { background-image: url(img/i_suppressed-evidence.png); }
+#unfalsifiability:before { background-image: url(img/i_unfalsifiability.png); }
 
 .fallacy-causes h2 { color: #eb008b; }
 .fallacy-causes dl { background-color: #eb008b; }
 
-#consequent:before { background-image: url(i_consequent.png); }
-#circular:before { background-image: url(i_circular.png); }
-#cum-hoc:before { background-image: url(i_cum-hoc.png); }
-#antecedent:before { background-image: url(i_antecedent.png); }
-#common-cause:before { background-image: url(i_common-cause.png); }
-#post-hoc:before { background-image: url(i_post-hoc.png); }
-#wrongs:before { background-image: url(i_wrongs.png); }
+#consequent:before { background-image: url(img/i_consequent.png); }
+#circular:before { background-image: url(img/i_circular.png); }
+#cum-hoc:before { background-image: url(img/i_cum-hoc.png); }
+#antecedent:before { background-image: url(img/i_antecedent.png); }
+#common-cause:before { background-image: url(img/i_common-cause.png); }
+#post-hoc:before { background-image: url(img/i_post-hoc.png); }
+#wrongs:before { background-image: url(img/i_wrongs.png); }
 
 .fallacy-attack h2 { color: #188dcd; }
 .fallacy-attack dl { background-color: #188dcd; }
 
-#ad-hominem:before { background-image: url(i_ad-hominem.png); }
-#proof:before { background-image: url(i_proof.png); }
-#circumstantial-ad-hominem:before { background-image: url(i_circumstantial-ad-hominem.png); }
-#genetic:before { background-image: url(i_genetic.png); }
-#association:before { background-image: url(i_association.png); }
-#strawman:before { background-image: url(i_strawman.png); }
+#ad-hominem:before { background-image: url(img/i_ad-hominem.png); }
+#proof:before { background-image: url(img/i_proof.png); }
+#circumstantial-ad-hominem:before { background-image: url(img/i_circumstantial-ad-hominem.png); }
+#genetic:before { background-image: url(img/i_genetic.png); }
+#association:before { background-image: url(img/i_association.png); }
+#strawman:before { background-image: url(img/i_strawman.png); }
