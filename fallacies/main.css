@@ -7,6 +7,10 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+.long-text {
+  word-break: break-all;
+}
+
 body, h1, h2 {
   font-family: "Muli", sans-serif;
 }
@@ -171,20 +175,23 @@ dd {
 #association:before { background-image: url(img/i_association.png); }
 #strawman:before { background-image: url(img/i_strawman.png); }
 
-/**
- * On wider screens we can show two columns side by side.
- */
-@media all
-and (min-device-width: 75em) {
-  section {
-    min-width: 28em;
-    max-width: 50%;
+@media print {
+  /**
+   * body styles must come before the media queries below,
+   * so relative min-width for the screen is calculated properly.
+  */
+  body {
+    font-size: 12pt;
   }
 }
 
-@media print {
-  body {
-    font-size: 12pt;
+/**
+ * On wider screens we can show two columns side by side.
+ */
+@media all and (min-width: 58em) {
+  section {
+    min-width: 28em;
+    max-width: 50%;
   }
 }
 
