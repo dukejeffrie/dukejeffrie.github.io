@@ -22,8 +22,7 @@ body {
 }
 
 section {
-  min-width: 32em;
-  max-width: 50%;
+  max-width: 100%;
 }
 
 h1 {
@@ -170,3 +169,21 @@ dd {
 #genetic:before { background-image: url(img/i_genetic.png); }
 #association:before { background-image: url(img/i_association.png); }
 #strawman:before { background-image: url(img/i_strawman.png); }
+
+/**
+ * On wider screens we can show two columns side by side.
+ */
+@media all
+and (min-device-width: 75em) {
+  section {
+    min-width: 28em;
+    max-width: 50%;
+  }
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+  }
+}
+
