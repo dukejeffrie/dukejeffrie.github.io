@@ -188,9 +188,9 @@ dd {
 /**
  * On wider screens we can show two columns side by side.
  */
-@media all and (min-width: 58em) {
+@media all and (min-width: 66em) {
   section {
-    min-width: 28em;
+    min-width: 32em;
     max-width: 50%;
   }
 }
