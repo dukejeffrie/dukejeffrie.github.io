@@ -95,11 +95,11 @@ dd {
 }
 .example:before {
   display: inline;
-  content: "\201C";
+  content: open-quote;
 }
 .example:after {
   display: inline;
-  content: "\201D";
+  content: close-quote;
 }
 
 .fallacy-mind h2 { color: #754d29; }
