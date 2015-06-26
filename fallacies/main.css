@@ -187,7 +187,7 @@ dd {
   }
 }
 
-@media (min-width: 510px) {
+@media (min-width: 420px) {
   dl {
     padding-left: 170px;
   }
@@ -207,7 +207,23 @@ dd {
  */
 @media (min-width: 64em) {
   section {
-    min-width: 31em;
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
+@media (min-width: 96em) {
+  section {
+    min-width: 33%;
+    max-width: 33%;
+  }
+}
+
+@media print and (orientation: landscape) {
+  html {
+    font-size: 12pt;
+  }
+  section {
+    min-width: 50%;
     max-width: 50%;
   }
 }
