@@ -181,13 +181,13 @@ dd {
 #association:before { background-image: url(img/i_association.png); }
 #strawman:before { background-image: url(img/i_strawman.png); }
 
-@media (min-device-width: 320px) {
+@media (min-width: 320px) {
   html {
     font-size: 18px;
   }
 }
 
-@media (min-device-width: 640px) {
+@media (min-width: 640px) {
   html {
     font-size: 16px;
   }
