@@ -60,7 +60,7 @@ dl {
   min-height: 8em;
   position: relative;
   margin: 1px 1px 0 0;
-  padding: 1.3em 2em 1.3em 170px;
+  padding: 1.3em 2em 1.3em 1em;
   color: white;
   background-color: pink;
   border-radius: 0 1em 0 0;
@@ -184,6 +184,15 @@ dd {
 @media (min-width: 320px) {
   html {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 510px) {
+  dl {
+    padding-left: 170px;
+  }
+  dl:before {
+    display: block;
   }
 }
 
