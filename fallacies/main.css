@@ -69,7 +69,7 @@ dl:before {
   content: "";
   background-repeat: no-repeat;
   background-position: center center;
-  display: block;
+  display: none;
   position: absolute;
   top: 18px;
   left: 12px;
