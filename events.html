@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event visibility demo</title>
+  <script>
+    function appendPong(event) {
+      event.detail.value = event.detail.value + ' pong!'
+      event.detail.last = 'pong'
+    }
+    function appendPing(event) {
+      event.detail.value = event.detail.value + ' ping!'
+      event.detail.last = 'ping'
+    }
+    let eventId = 0;
+    function firePingPong() {
+      const e = new CustomEvent('ping-pong', {
+        detail: {
+          timestamp: Date.now(),
+          value: eventId++
+        }
+      });
+      document.dispatchEvent(e);
+    }
+    document.addEventListener('ping-pong', function(event) {
+      appendPing(event);
+    });
+    document.addEventListener('ping-pong', function(event) {
+      appendPong(event);
+    });
+    document.addEventListener('ping-pong', function(event) {
+      const el = document.createElement('pre');
+      el.textContent = JSON.stringify(event.detail);
+      document.body.appendChild(el);
+      if (eventId <= 10) {
+        setTimeout(firePingPong, 400);
+      }
+    });
+    setTimeout(firePingPong, 800);
+  </script>
+  </head>
+
+  <body>
+    <p>This page demonstrates how event data is visible and modifiable via event listeners.</p>
+  </body>
+</html>
