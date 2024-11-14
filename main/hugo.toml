@@ -1,0 +1,17 @@
+baseURL = 'https://tmsgreen.tech/'
+title = 'TMS Tech'
+theme = 'ananke'
+
+defaultContentLanguage = 'pt'
+defaultContentLanguageInSubdir = false
+
+[params]
+date_format = "2006-01-02"
+show_reading_time = false
+mainSections = ['post']
+recent_posts_number = 10
+
+[params.ananke.social]
+follow.networks = ['linkedin', 'github']
+linkedin.username = 'dukejeffrie'
+github.username = 'dukejeffrie'

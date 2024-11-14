@@ -1,0 +1,149 @@
+#app {
+  min-width: 800px;
+  margin: 0;
+  background-color: white;
+  padding: 0 1em;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  width: 8em;
+}
+
+.slider input {
+  border: none;
+  background-color: transparent;
+}
+
+.slider input:hover {
+  background-color: white;
+}
+
+
+select:focus,
+input:focus,
+.text:focus {
+  background-color: white;
+  outline-width: 1px;
+  outline-color: lightseagreen;
+}
+
+.card {
+  padding: 2px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.slider-title {
+  line-height: 1.2em;
+}
+
+.slider-title>input {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 6em;
+}
+
+.slider-value {
+  min-height: 5em;
+  margin-top: 65px;
+}
+
+.slider-value-display {
+  font-size: 0.9em;
+  position: relative;
+  top: 4px;
+}
+
+.slider-value>input {
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+
+.controls {
+  display: inline-block;
+  margin-left: 1em;
+  font-size: initial;
+  font-weight: initial;
+}
+
+.controls select {
+  margin-left: 0.5em;
+}
+
+.controls input[title="limit"] {
+  width: 2.5em;
+  text-align: end;
+}
+
+button.delete {
+  border-color: transparent;
+  border-radius: 3px;
+  top: -1px;
+  right: -1px;
+  align-self: flex-end;
+  position: relative;
+}
+
+button.delete:hover {
+  border-color: gray;
+}
+
+.slider-explanation>.title {
+  margin-bottom: 0;
+}
+
+.text {
+  width: 100%;
+}
+
+.explanation>.text {
+  min-height: 5em;
+}
+
+.briefing>.text {
+  min-height: 10rem;
+}
+
+.print {
+  display: none;
+}
+
+@media print {
+
+  .sliders,
+  .slider-explanation {
+    break-inside: avoid;
+  }
+
+  .footer,
+  .text,
+  .controls,
+  .delete {
+    display: none;
+  }
+
+  .print {
+    display: block;
+    white-space: pre-wrap;
+  }
+  article p, article ul, header, footer {
+    display: none;
+  }
+  article #app {
+    display: block;
+  }
+}

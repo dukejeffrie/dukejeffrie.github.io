@@ -1,0 +1,3 @@
+main/public/**
+main/resources/_gen/**
+local/**
