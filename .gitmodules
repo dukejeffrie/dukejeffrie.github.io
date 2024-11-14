@@ -1,6 +1,6 @@
 [submodule "tmsgreen.tech/hugo/themes/hugo-theme-tokiwa"]
-	path = main/themes/hugo-theme-tokiwa
+	path = docs/themes/hugo-theme-tokiwa
 	url = https://github.com/heyeshuang/hugo-theme-tokiwa.git
 [submodule "tmsgreen.tech/hugo/themes/ananke"]
-	path = main/themes/ananke
+	path = docs/themes/ananke
 	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
