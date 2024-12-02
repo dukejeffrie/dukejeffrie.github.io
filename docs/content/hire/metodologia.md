@@ -55,8 +55,8 @@ Um engajamento típico segue quatro fases principais:
 1. **Diagnóstico Inicial -**
    Identificação detalhada dos obstáculos e oportunidades no contexto atual da empresa. Veja também [Diagnóstico]({{<ref "diagnostico">}}).
 
-2. **Planejamento Estratégico -**
-   Definição de OKRs e/ou entregas específicas, sempre alinhados com os objetivos do negócio.
+2. **Plano Tático -**
+   Definição de metas e entregas específicas, sempre alinhados com os objetivos do negócio.
 
 3. **Execução -**
    Implementação das iniciativas planejadas, com acompanhamento próximo e ajustes quando necessário.

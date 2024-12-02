@@ -7,16 +7,15 @@ menus = 'main'
 type = 'page'
 +++
 
-Descubra rapidamente se o seu time pode gerar muito mais impacto com a minha liderança.
+Descubra rapidamente se o seu time pode gerar muito mais impacto com meu apoio. Em sessões que podem durar um dia ou uma semana, eu realizo um diagnóstico competitivo do seu time de Engenharia, Produto e Design, com os seguintes objetivos:
 
-Em sessões que podem durar um dia ou uma semana, eu realizo um diagnóstico competitivo do seu time de Engenharia, Produto e Design, com os seguintes objetivos:
-- Encontrar gargalos no sistema que impedem a escala, seja por motivos de custo unitário ou incapacidade de aumentar a capacidade total.
+- Encontrar gargalos no sistema que atrapalham ganhar escala, seja no número de usuários, transações ou outros indicadores
 - Encontrar processos que pioram a qualidade do software ou atrasam o desenvolvimento e podem ser melhorados
 - Encontrar oportunidades de desenvolvimento nos líderes que aumentam as chances de sucesso no longo prazo
 
 ### Para quem é indicado
 
-O diagnóstico é indicado para a empresa que tem um time de tecnologia maior (10-100) e se encontra em um dos cenários abaixo:
+O diagnóstico é indicado para a empresa que tem um time de tecnologia já existente (10-100 pessoas) e se encontra em um dos cenários abaixo:
 
 - Oceano vermelho, com churn de usuários ou clientes, que sente que poderia retê-los muito melhor com um produto mais competitivo, sem deixar de conquistar novos clientes
 - Ambição de conquistar um mercado novo (no mesmo país ou em outro), apoiada em um software já construído, mas que parece difícil de adaptar ao novo contexto
