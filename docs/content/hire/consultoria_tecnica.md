@@ -8,15 +8,7 @@ draft = true
 
 ## Diagnóstico Técnico
 
-Avaliação profunda da sua arquitetura e processos técnicos, identificando:
-- Gargalos que impedem a escala
-- Oportunidades de otimização de custos
-- Débitos técnicos críticos
-- Riscos de segurança e conformidade
-
-O diagnóstico pode ser realizado em:
-- Uma tarde (gratuito): Visão geral e recomendações iniciais
-- Uma semana (pago): Análise detalhada com plano de ação
+Veja [aqui]({{<ref "diagnostico">}}) como funciona o diagnóstico técnico.
 
 ## Arquitetura de Software
 
