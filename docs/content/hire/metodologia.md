@@ -1,7 +1,6 @@
 +++
 title = "Consultoria"
 type = "page"
-menu = "main"
 summary = "Desenvolvi uma abordagem que combina flexibilidade com resultados consistentes."
 weight = 10
 +++
