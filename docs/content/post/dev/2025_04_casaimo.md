@@ -13,12 +13,7 @@ No começo do ano, trabalhei em uma plataforma que usava IA para ajudar pessoas 
 
 Segundo apurei com o time, o sistema estava bom, os resultados fazendo sentido. Mas pra algumas consultas voltavam poucos resultados, às vezes nenhum, o que pode ser uma pista de que existem resultados relevantes que foram filtrados. Ou seja, a impressão era de que existe um problema de **lembrança** (ou revocação, o termo brasileiro de quem fala difícil). Como fazer para melhorar essas buscas?
 
-<aside>
-💡
-
-**Revocação (lembrança) **: a capacidade de um sistema de busca de trazer para o conjunto de respostas o máximo possível de resultados relevantes. Ela aumenta quando mais resultados relevantes são recuperados.
-
-</aside>
+>💡 **Revocação (lembrança)**: a capacidade de um sistema de busca de trazer para o conjunto de respostas o máximo possível de resultados relevantes. Ela aumenta quando mais resultados relevantes são recuperados.
 
 Trouxe um pouco da minha experiência no Google Maps para a questão. Só existe um jeito confiável de evoluir em qualidade: medir a qualidade atual, descobrir as grandes oportunidades, e priorizar a pesquisa de melhorias de acordo com o tamanho das oportunidades. Normalmente não queremos fazer mudanças muito bruscas, queremos mudar só um pouquinho de cada vez. E isso significa que sempre iteramos em ciclos curtos: após mexer no código, precisamos saber o que mudou. Normalmente usa-se um conjunto de consultas representativo do universo, o que nesse estágio da startup significa mesmo **todas as consultas**. Muitas vezes, uma mudança pequena no algoritmo impacta apenas um subconjunto de consultas, então precisamos de um programa que roda todas as consultas com o algoritmo velho e com o novo, e compara os dois lados, escondendo o que ficou idêntico.
 
@@ -52,13 +47,17 @@ Declarei que a Localização é o primeiro recorte, e depois aplico os filtros e
 
 A tabela a seguir mostra o comportamento de uma única consulta no funil. Começamos com os filtros básicos (imóvel disponível, com preço declarado). Aplicamos o filtro de localização em Belém , depois de preço, e assim por diante.
 
-![tabela.png](image.png)
+[
+![funil](image.png "funil de imóveis")
+](image.png)
 
 Na figura acima, podemos ver que a limitação de preço excluiu 64% dos apartamentos que chegaram até ali (pelo visto, morar em Belém é caro!)
 
 A pergunta seguinte seria como expandir o conjunto de resultados. Será que tem um monte de apartamento logo ali depois da fronteira dos 500 mil? Fiz um plot com 4 colunas pra analisar:
 
-![filtro.png](image1.png)
+[
+![filtro](image1.png "imóveis filtrados pelo preço máximo")
+](image1.png)
 
 Dá pra ver que até 120% de aumento trariam mais 8 resultados, um aumento significativo para os 11. Talvez esse seja o jeito certo de relaxar a restrição de preço? O novo algoritmo poderia trazer alguns resultados a mais, depois consertar no ranking pra não perder precisão.
 
@@ -68,7 +67,9 @@ Nessas horas, dá uma coceira pra atacar o problema e tentar resolvê-lo com tal
 
 Eu extrapolei essa ideia de funil para o conjunto completo de consultas com baixa lembrança. Para cada uma, posso coletar o percentual de candidatos excluidos a cada passo, ou descobrir qual filtro trouxe o conjunto de candidatos para menos de 6, e tentar responder a pergunta: “qual dos filtros pode ser relaxado para aumentar a lembrança sem piorar a precisão”? O gráfico a seguir dá pista de que mexer com o tipo de imóvel seja o mais benéfico. Uma consulta pode especificar casa, apartamento, ou nenhum filtro. E a hora que eu vi isso, me deu um estalo e percebi que caí em outra armadilha de desenvolvimento que já tinha esbarrado antes.
 
-![agregado.png](image2.png)
+[
+![agregado](image2.png "distribuição do filtro excludente")
+](image2.png)
 
 ### Lição antiga
 
@@ -82,7 +83,7 @@ Ao olhar algumas consultas com problemas e os filtros que as quebraram, encontre
 
 Em horas bunda-na-cadeira, a brincadeira toda durou umas 18h. Como o meu engajamento era intemitente, no entanto, duas semanas se passaram. Por um lado, a coisa mais comum do mundo, por outro lado, duas semanas em uma startup podem significar a vida ou a morte.
 
-Conto essa história por dois motivos: primeiro, pra me ajudar a lembrar pra sempre da experiência e gravar melhor esse aprendizado. O segundo, para te ajudar a criar mecanismos para se auto-regular, como os que eu criei. Todo dia, pela manhã, eu fazia uma rápida avaliação de o quanto eu andei ontem e o quanto eu devo andar hoje. Se você nota que não está andando na direção certa, hora de repensar. E, apesar de não ter escrito o que eu ia fazer no dia 1, eu acabei escrevendo meio em paralelo. Nem sempre precisa ser um *****design doc* formal.
+Conto essa história por dois motivos: primeiro, pra me ajudar a lembrar pra sempre da experiência e gravar melhor esse aprendizado. O segundo, para te ajudar a criar mecanismos para se auto-regular, como os que eu criei. Todo dia, pela manhã, eu fazia uma rápida avaliação de o quanto eu andei ontem e o quanto eu devo andar hoje. Se você nota que não está andando na direção certa, hora de repensar. E, apesar de não ter escrito o que eu ia fazer no dia 1, eu acabei escrevendo meio em paralelo. Nem sempre precisa ser um **design doc** formal.
 
 Quando esse texto estava quase pronto, Aman Khan [escreveu na newsletter do Lenny](https://www.lennysnewsletter.com/p/beyond-vibe-checks-a-pms-complete) que o mundo das IAs e dos LLMs só vai te trazer sucesso se você aprender a fazer boas avaliações.
 
