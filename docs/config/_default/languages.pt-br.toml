@@ -1,0 +1,24 @@
+languageCode = "pt-br"
+languageName = "Português (Brasil)"
+weight = 1
+title = "TMS Tech"
+
+[params]
+  displayName = "PT"
+  isoCode = "pt-br"
+  rtl = false
+  dateFormat = "2006-01-02"
+  # logo = "img/logo.png"
+  # secondaryLogo = "img/secondary-logo.png"
+  description = "Consultoria em tecnologia para empresas em crescimento acelerado"
+  # copyright = "© 2024 Tiago M da Silveira"
+
+[params.author]
+  name = "Tiago M da Silveira"
+  # image = "img/author.jpg"
+  headline = "Consultoria em tecnologia"
+  bio = "Trabalho com consultoria em tecnologia para empresas em crescimento acelerado. Por uma fração do custo de um líder técnico tradicional, ajudo a sua empresa a impulsionar seu desenvolvimento tecnológico rapidamente."
+  links = [
+    { linkedin = "https://linkedin.com/in/dukejeffrie" },
+    { github = "https://github.com/dukejeffrie" }
+  ]
