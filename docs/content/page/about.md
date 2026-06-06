@@ -3,6 +3,7 @@ title: "Quem sou eu"
 type: page
 menu: main
 omit_header_text: true
+showDate: false
 ---
 
 Tenho particular interesse em circularidade e cadeias de suprimentos e logística circular, além de energia verde e descarbonização.
