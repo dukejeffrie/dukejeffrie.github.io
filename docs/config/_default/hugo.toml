@@ -47,6 +47,9 @@ enableEmoji = true
         [markup.goldmark.extensions.extras.superscript]
           enable = true
 
+[security]
+  allowContent = ['.*']
+
 [related]
   threshold = 0
   toLower = false
