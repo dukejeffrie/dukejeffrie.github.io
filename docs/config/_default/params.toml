@@ -8,6 +8,7 @@
 colorScheme = "blowfish"
 defaultAppearance = "light"
 autoSwitchAppearance = true
+defaultBackgroundImage = "images/background.svg"
 
 enableSearch = true
 enableCodeCopy = true
@@ -31,7 +32,9 @@ smartTOCHideUnfocusedChildren = false
   showScrollToTop = true
 
 [homepage]
-  layout = "profile"
+  layout = "background"
+  homepageImage = "images/background.svg"
+  layoutBackgroundBlur = true
   showRecent = true
   showRecentItems = 10
   showMoreLink = false
@@ -44,8 +47,9 @@ smartTOCHideUnfocusedChildren = false
   showLikes = false
   showDateUpdated = false
   showAuthor = false
-  showHero = false
-  heroStyle = "basic"
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
@@ -62,7 +66,9 @@ smartTOCHideUnfocusedChildren = false
   showZenMode = false
 
 [list]
-  showHero = false
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
   showBreadcrumbs = false
   showSummary = true
   showTableOfContents = false
@@ -78,13 +84,15 @@ smartTOCHideUnfocusedChildren = false
 
 [taxonomy]
   showTermCount = true
-  showHero = false
+  showHero = true
+  heroStyle = "background"
   showBreadcrumbs = false
   showTableOfContents = false
   cardView = true
 
 [term]
-  showHero = false
+  showHero = true
+  heroStyle = "background"
   showBreadcrumbs = false
   showTableOfContents = true
   groupByYear = false
