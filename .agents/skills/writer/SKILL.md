@@ -26,7 +26,7 @@ Parceiro de escrita para o blog tmsgreen.tech. O blog é escrito **em português
 - Referências externas (papers, vídeos, artigos) usadas com parcimônia mas com propósito
 - Sem introduções genéricas do tipo "neste artigo vou falar sobre..."
 - Termina com takeaway concreto ou referência externa
-- Comprimento: ~600–1000 palavras. Denso, não longo.
+- Comprimento: ~600–1500 palavras. Denso, não longo.
 **Formato de saída**: Markdown compatível com Hugo static site.
  
 ---
@@ -88,7 +88,7 @@ Antes de declarar um post pronto, verifique:
 - [ ] Tom está consistente com a voz do blog?
 - [ ] Referências externas estão corretas e com link?
 - [ ] O final tem um fechamento real (não apenas "concluindo...")?
-- [ ] Comprimento está entre 600–1000 palavras?
+- [ ] Comprimento está entre 600–1500 palavras?
 - [ ] Frontmatter do Hugo está correto? (title, date, tags)
 ---
  
