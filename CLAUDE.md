@@ -4,7 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Hugo-based blog/personal website for TMS Tech (tmsgreen.tech), a technology consultancy focused on software development and leadership content. The site is published via GitHub Pages.
+This is a Hugo-based blog/personal website for TMS Tech (tmsgreen.tech), a technology consultancy focused on software development and leadership content.
+
+This is a standard Hugo static site generator setup with minimal customization.
+ 
+- Uses the Ananke theme without extensive modifications
+- Content is organized by topic (dev vs leadership)
+- No complex build pipeline - just Hugo's standard workflow
+- Published on GitHub Pages (via git push).
 
 **Primary Language:** Brazilian Portuguese (unless otherwise specified)
 **Target Audience:** Senior developers, product people, and owners of small tech companies
@@ -28,7 +35,6 @@ This is a Hugo-based blog/personal website for TMS Tech (tmsgreen.tech), a techn
   └── hugo.toml         # Hugo configuration
 
 /local/                  # Planning documents and CV (not deployed)
-/.cursor/rules/          # Cursor AI rules for content editing
 ```
 
 ## Common Commands
@@ -74,19 +80,6 @@ tags = ["desenvolvimento", "ciência de dados"]
 
 **Important:** Preserve front matter exactly when editing posts. The markers (`+++` or `---`) and configuration must remain intact.
 
-### Content Sections
-- `content/post/dev/` - Technical and development articles
-- `content/post/leadership/` - Leadership and management content
-- `content/hire/` - Services and hiring information
-- `content/page/` - General static pages
-
-### Writing Assistant Context
-When editing blog posts (`.cursor/rules/bblog.mdc`):
-- Maintain the author's voice and personality
-- Keep a sober, concise style matching existing articles
-- Content is primarily in Brazilian Portuguese
-- Focus on senior technical audience
-- Improve clarity and thought cadence without over-formalizing
 
 ## Site Configuration
 
@@ -108,17 +101,20 @@ The site is deployed to GitHub Pages. The `docs/public/` directory contains the 
 **Main branch:** `master` (use this for pull requests)
 **Current branch:** `main` (check branch before creating PRs)
 
+### Content Sections
+- `content/post/dev/` - Technical and development articles
+- `content/post/leadership/` - Leadership and management content
+- `content/hire/` - Services and hiring information
+- `content/page/` - General static pages
+
+### Writer skill
+
+Always load the writer skill when editing or refining blog posts.
 ## Git Workflow
 
 Untracked files in the repository include work-in-progress posts and local planning documents. When committing:
 - Only commit finalized blog posts in `docs/content/post/`
 - Avoid committing files from `local/` directory unless specifically needed
 - Check that images referenced in posts are committed alongside the post
+- never push to remote.
 
-## Architecture Notes
-
-This is a standard Hugo static site generator setup with minimal customization:
-- Uses the Ananke theme without extensive modifications
-- Custom layouts are sparse (only the rawhtml shortcode)
-- Content is organized by topic (dev vs leadership)
-- No complex build pipeline - just Hugo's standard workflow
