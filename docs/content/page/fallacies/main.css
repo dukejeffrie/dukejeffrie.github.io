@@ -1,17 +1,27 @@
 /* Homenagem ao pôster "Rhetological Fallacies" de informationisbeautiful.net:
-   fundo escuro, seis famílias de cor, um círculo-ícone por falácia. */
+   seis famílias de cor, um círculo-ícone por falácia.
+   As cores de fundo e de texto seguem o tema (variáveis --color-neutral-* do
+   blowfish, classe "dark" no <html>); os valores depois da vírgula são o
+   fallback para quando a página roda fora do tema. */
 
 .fallacies {
-  --bg: #15171f;
-  --card: #232736;
-  --fg: #f2f3f7;
-  --muted: #b4b9cc;
-  background: var(--bg);
+  --bg: rgb(var(--color-neutral, 255, 255, 255));
+  --card: rgb(var(--color-neutral-100, 241, 245, 249));
+  --card-hi: rgb(var(--color-neutral-200, 226, 232, 240));
+  --line: rgb(var(--color-neutral-300, 203, 213, 225));
+  --fg: rgb(var(--color-neutral-900, 15, 23, 42));
+  --muted: rgb(var(--color-neutral-600, 71, 85, 105));
   color: var(--fg);
-  border-radius: 1rem;
-  padding: 1.25rem;
   margin: 1.5rem 0;
   line-height: 1.5;
+}
+html.dark .fallacies {
+  --bg: rgb(var(--color-neutral-800, 30, 41, 59));
+  --card: rgb(var(--color-neutral-900, 15, 23, 42));
+  --card-hi: rgb(var(--color-neutral-700, 51, 65, 85));
+  --line: rgb(var(--color-neutral-600, 71, 85, 105));
+  --fg: rgb(var(--color-neutral-50, 248, 250, 252));
+  --muted: rgb(var(--color-neutral-300, 203, 213, 225));
 }
 .fallacies a { color: inherit; }
 .fallacies [hidden] { display: none; }
@@ -22,6 +32,7 @@
 .fallacy-content   { --c: #5eab8a; --on: #111; }
 .fallacy-causes    { --c: #eb008b; --on: #fff; }
 .fallacy-attack    { --c: #188dcd; --on: #111; }
+html.dark .fallacy-mind { --c: #a8713f; } /* o marrom original some no fundo escuro */
 
 /* barra de busca e filtros (criada pelo script) */
 .toolbar {
@@ -39,10 +50,10 @@
   font: inherit;
   color: var(--fg);
   background: var(--card);
-  border: 2px solid #3a3f55;
+  border: 2px solid var(--line);
   border-radius: 2rem;
 }
-.toolbar input[type=search]:focus-visible { outline: 3px solid #fff; outline-offset: 1px; }
+.toolbar input[type=search]:focus-visible { outline: 3px solid var(--fg); outline-offset: 1px; }
 .chip {
   font: inherit;
   font-size: 0.9em;
@@ -54,7 +65,7 @@
   cursor: pointer;
 }
 .chip[aria-pressed=true] { background: var(--c); color: var(--on); font-weight: bold; }
-.chip:focus-visible { outline: 3px solid #fff; outline-offset: 1px; }
+.chip:focus-visible { outline: 3px solid var(--fg); outline-offset: 1px; }
 .count { color: var(--muted); font-size: 0.9em; margin-left: auto; }
 .empty { color: var(--muted); text-align: center; padding: 2rem 0; }
 
@@ -82,7 +93,7 @@
   border-radius: 0 1em 0 0;
   scroll-margin-top: 5rem;
 }
-.fallacies dl:target { outline: 3px solid var(--c); background: #2d3247; }
+.fallacies dl:target { outline: 3px solid var(--c); background: var(--card-hi); }
 .fallacies dt {
   display: flex;
   align-items: center;
@@ -124,7 +135,7 @@
   font-weight: bold;
 }
 .fallacies summary::marker { color: var(--c); }
-.fallacies summary:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.fallacies summary:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
 .fallacies details[open] summary { margin-bottom: 0.5rem; }
 .fallacies .why { margin: 0; color: var(--fg); }
 .fallacies .see { margin: 0.75rem 0 0; font-size: 0.9em; color: var(--muted); }
@@ -195,7 +206,7 @@
 }
 
 @media print {
-  .fallacies { --bg: #fff; --card: #fff; --fg: #000; --muted: #333; }
+  .fallacies, html.dark .fallacies { --bg: #fff; --card: #fff; --fg: #000; --muted: #333; --line: #999; }
   .toolbar { display: none; }
   .fallacies dl { break-inside: avoid; border: 1px solid #999; border-top: 4px solid var(--c); }
 }
