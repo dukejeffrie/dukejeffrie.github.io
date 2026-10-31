@@ -193,10 +193,15 @@ html.dark .fallacies {
 
     .toolbar, .count, .empty, .see, summary { display: none; }
 
-    /* cor da categoria um pouco mais escura: o glifo branco do ícone precisa de contraste, inclusive em cinza */
-    section { --c: color-mix(in srgb, var(--c0) 70%, black); }
-
-    section { display: block; padding: 0; margin-bottom: 1rem; background: none; border-radius: 0; }
+    section {
+      /* cor da categoria um pouco mais escura: o glifo branco do ícone precisa de contraste, inclusive em cinza */
+      --c: color-mix(in srgb, var(--c0) 70%, black);
+      display: block;
+      padding: 0;
+      margin-bottom: 1rem;
+      background: none;
+      border-radius: 0;
+    }
     h2 {
       margin-bottom: 0.6rem;
       padding-bottom: 0.2rem;
