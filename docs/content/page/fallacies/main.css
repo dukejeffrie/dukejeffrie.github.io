@@ -175,10 +175,66 @@ html.dark .fallacies {
   .fallacies :is(dl, .chip) { transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s; }
   .fallacies dl:target { transform: scale(1.03); }
 }
+@page { size: A4; margin: 14mm 12mm; }
 @media print {
-  .fallacies, html.dark .fallacies { --bg: #fff; --card: #fff; --fg: #000; --muted: #333; --line: #999; }
-  .fallacies .toolbar { display: none; }
-  .fallacies dl { break-inside: avoid; }
+  /* o que é do tema e não faz sentido no papel */
+  .main-menu, #the-top, #scroll-to-top, #search-modal, article > footer { display: none !important; }
+  body { display: block !important; height: auto !important; max-width: none !important; padding: 0 !important; }
+  /* no tema escuro o texto do tema sairia claro sobre papel branco */
+  html.dark body { background: #fff !important; color: #000 !important; }
+  html.dark #main-content :is(h1, p, a, div, span) { color: #000 !important; }
+
+  .fallacies, html.dark .fallacies {
+    --bg: #fff; --card: #fff; --card-hi: #fff; --fg: #000; --muted: #333; --line: #999;
+    print-color-adjust: exact;          /* sem isso o navegador descarta os ícones (são fundo) */
+    -webkit-print-color-adjust: exact;
+    font-size: 10pt;
+    margin: 0;
+
+    .toolbar, .count, .empty, .see, summary { display: none; }
+
+    section { display: block; padding: 0; margin-bottom: 1rem; background: none; border-radius: 0; }
+    h2 {
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 3px solid var(--c);
+      font-size: 14pt;
+      break-after: avoid;
+    }
+    dl, dl:target {            /* :target ignorado: nenhum cartão é destaque no papel */
+      margin: 0 0 0.5rem;
+      padding: 0.5rem 0.6rem;
+      background: #fff;
+      box-shadow: none;
+      transform: none;
+      break-inside: avoid;
+    }
+    dt::before { width: 2.6rem; }
+
+    /* "Entenda melhor" sempre aberto, sem depender de JS */
+    details::details-content { content-visibility: visible; }
+
+    /* duas colunas, lidas por linha:
+       linha 1 = definição | primeiro exemplo
+       linha 2 = por quê   | mais exemplos e resposta */
+    dd { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; align-items: start; }
+    dd > .example { grid-column: 2; grid-row: 1; margin-top: 0; }
+    dd > details {
+      grid-column: 1 / -1;
+      margin-top: 0.6rem;
+    }
+    /* os filhos de details ficam em details (Firefox/Safari) ou em ::details-content (Chrome) */
+    details, details::details-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+      align-content: start;
+      align-items: start;
+    }
+    details::details-content { grid-column: 1 / -1; }
+    .why { grid-column: 1; grid-row: 1 / span 3; }
+    details .example, .reply { grid-column: 2; margin: 0 0 0.4rem; }
+  }
 }
 
 /* ícones: um por falácia, lidos pelo círculo do título */
