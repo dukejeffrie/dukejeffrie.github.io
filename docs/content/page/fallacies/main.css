@@ -3,13 +3,13 @@
    Fundo e texto seguem o tema (variáveis --color-neutral-* do blowfish e classe
    "dark" no <html>); os valores depois da vírgula valem fora do tema. */
 
-.fallacy-mind      { --c: #754d29; --on: #fff; }
-.fallacy-emotion   { --c: #ea2227; --on: #fff; }
-.fallacy-deduction { --c: #918ac1; --on: #111; }
-.fallacy-content   { --c: #5eab8a; --on: #111; }
-.fallacy-causes    { --c: #eb008b; --on: #fff; }
-.fallacy-attack    { --c: #188dcd; --on: #111; }
-html.dark .fallacy-mind { --c: #a8713f; } /* o marrom original some no fundo escuro */
+.fallacy-mind      { --c0: #754d29; --c: var(--c0); --on: #fff; }
+.fallacy-emotion   { --c0: #ea2227; --c: var(--c0); --on: #fff; }
+.fallacy-deduction { --c0: #918ac1; --c: var(--c0); --on: #111; }
+.fallacy-content   { --c0: #5eab8a; --c: var(--c0); --on: #111; }
+.fallacy-causes    { --c0: #eb008b; --c: var(--c0); --on: #fff; }
+.fallacy-attack    { --c0: #188dcd; --c: var(--c0); --on: #111; }
+html.dark .fallacy-mind { --c0: #a8713f; } /* o marrom original some no fundo escuro */
 
 .long-text { word-break: break-all; }
 
@@ -193,6 +193,9 @@ html.dark .fallacies {
 
     .toolbar, .count, .empty, .see, summary { display: none; }
 
+    /* cor da categoria um pouco mais escura: o glifo branco do ícone precisa de contraste, inclusive em cinza */
+    section { --c: color-mix(in srgb, var(--c0) 70%, black); }
+
     section { display: block; padding: 0; margin-bottom: 1rem; background: none; border-radius: 0; }
     h2 {
       margin-bottom: 0.6rem;
@@ -235,6 +238,12 @@ html.dark .fallacies {
     .why { grid-column: 1; grid-row: 1 / span 3; }
     details .example, .reply { grid-column: 2; margin: 0 0 0.4rem; }
   }
+}
+
+/* sem cor (impressão monocromática): uma cor só em tudo.
+   !important porque o seletor aninhado do bloco de impressão acima é mais específico. */
+@media print and (monochrome) {
+  .fallacies section { --c: #333 !important; }
 }
 
 /* ícones: um por falácia, lidos pelo círculo do título */
