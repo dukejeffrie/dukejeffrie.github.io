@@ -138,8 +138,9 @@ html.dark .fallacy-mind { --c: #a8713f; } /* o marrom original some no fundo esc
     color: var(--fg);
     font-style: italic;
 
-    &::before { content: open-quote; }
-    &::after { content: close-quote; }
+    /* display: o estilo de texto do tema (.prose p::before) esconde pseudo-elementos de <p> */
+    &::before { content: open-quote; display: inline; }
+    &::after { content: close-quote; display: inline; }
   }
 
   /* "Entenda melhor" */
@@ -151,7 +152,7 @@ html.dark .fallacy-mind { --c: #a8713f; } /* o marrom original some no fundo esc
   .see { margin: 0.75rem 0 0; font-size: 0.9em; color: var(--muted); a { text-decoration: underline; } }
   .reply {
     margin: 0.75rem 0 0;
-    &::before { content: "Como responder: "; font-weight: bold; color: var(--fg); }
+    &::before { content: "Como responder: "; display: inline; font-weight: bold; color: var(--fg); }
   }
 }
 
