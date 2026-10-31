@@ -98,8 +98,7 @@ tags = ["desenvolvimento", "ciência de dados"]
 
 The site is deployed to GitHub Pages. The `docs/public/` directory contains the generated static site.
 
-**Main branch:** `master` (use this for pull requests)
-**Current branch:** `main` (check branch before creating PRs)
+**Main branch:** `main` (deploys to GitHub Pages on push; use it as the PR base)
 
 ### Content Sections
 - `content/post/dev/` - Technical and development articles
