@@ -1,97 +1,123 @@
-/* http://fonts.googleapis.com/css?family=Muli */
-@font-face {
-  font-family: 'Muli';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Muli'), url(http://fonts.gstatic.com/s/muli/v7/z6c3Zzm51I2zB_Gi7146Bg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
+/* Homenagem ao pôster "Rhetological Fallacies" de informationisbeautiful.net:
+   fundo escuro, seis famílias de cor, um círculo-ícone por falácia. */
 
-.long-text {
-  word-break: break-all;
+.fallacies {
+  --bg: #15171f;
+  --card: #232736;
+  --fg: #f2f3f7;
+  --muted: #b4b9cc;
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  line-height: 1.5;
 }
+.fallacies a { color: inherit; }
+.fallacies [hidden] { display: none; }
 
-.container {
-  font-family: "Muli", sans-serif;
-  font-size: 14px;
+.fallacy-mind      { --c: #754d29; --on: #fff; }
+.fallacy-emotion   { --c: #ea2227; --on: #fff; }
+.fallacy-deduction { --c: #918ac1; --on: #111; }
+.fallacy-content   { --c: #5eab8a; --on: #111; }
+.fallacy-causes    { --c: #eb008b; --on: #fff; }
+.fallacy-attack    { --c: #188dcd; --on: #111; }
+
+/* barra de busca e filtros (criada pelo script) */
+.toolbar {
   display: flex;
-  flex-flow: row wrap;
-}
-
-h1 {
-  font-weight: normal;
-  font-size: 3em;
-  color: #666;
-  text-align: center;
-}
-.subtitle {
-  font-style: italic;
-  margin: 0;
-}
-
-h2 {
-  font-weight: normal;
-  margin-bottom: 1.2em;
-  font-size: 1.8em;
-}
-
-
-dl {
-  min-height: 8em;
-  display: flex;
-  flex-direction: column;
-  margin: 1px 1px 0 0;
-  padding: 1.3em 2em 1.3em 1em;
-  color: white;
-  background-color: pink;
-  border-radius: 0 1em 0 0;
-}
-dt:before {
-  content: "";
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  display: block;
-  border: 6px solid white;
-  border-radius: 70px;
-  width: 4rem;
-  height: 4rem;
-  margin-right: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.75rem 0;
   margin-bottom: 0.5rem;
-  flex-grow: 0;
-  flex-shrink: 0;
+  background: var(--bg);
 }
-dt {
-  display: flex;
-  flex-direction: row;
+.toolbar input[type=search] {
+  flex: 1 1 14rem;
+  padding: 0.5rem 0.8rem;
+  font: inherit;
+  color: var(--fg);
+  background: var(--card);
+  border: 2px solid #3a3f55;
+  border-radius: 2rem;
+}
+.toolbar input[type=search]:focus-visible { outline: 3px solid #fff; outline-offset: 1px; }
+.chip {
+  font: inherit;
+  font-size: 0.9em;
+  color: var(--fg);
+  background: transparent;
+  border: 2px solid var(--c);
+  border-radius: 2rem;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+}
+.chip[aria-pressed=true] { background: var(--c); color: var(--on); font-weight: bold; }
+.chip:focus-visible { outline: 3px solid #fff; outline-offset: 1px; }
+.count { color: var(--muted); font-size: 0.9em; margin-left: auto; }
+.empty { color: var(--muted); text-align: center; padding: 2rem 0; }
+
+/* seções e cartões */
+.fallacies section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.fallacies h2 {
+  grid-column: 1 / -1;
+  margin: 0.5rem 0 0;
+  padding-left: 0.6rem;
+  border-left: 0.5rem solid var(--c);
   font-size: 1.6em;
-  font-weight: bold;
-  margin: 0 0 0.3em 0;
-  padding: 0;
-  flex-grow: 1;
+  font-weight: normal;
+  color: var(--fg);
 }
-dd {
-  clear: left;
-  font-size: 1em;
+.fallacies dl {
   margin: 0;
-  padding: 0;
+  padding: 1rem;
+  background: var(--card);
+  border-top: 4px solid var(--c);
+  border-radius: 0 1em 0 0;
+  scroll-margin-top: 5rem;
 }
-.example {
+.fallacies dl:target { outline: 3px solid var(--c); background: #2d3247; }
+.fallacies dt {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.fallacies dt a { text-decoration: none; }
+.fallacies dt a:hover, .fallacies dt a:focus-visible { text-decoration: underline; }
+.fallacies dt:before {
+  content: "";
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: var(--c) center / contain no-repeat;
+}
+.fallacies dd { margin: 0; color: var(--muted); }
+.fallacies .example {
+  margin: 0.6rem 0 0;
+  padding-left: 0.7rem;
+  border-left: 3px solid var(--c);
+  color: var(--fg);
   font-style: italic;
-  margin-bottom: 0;
 }
-.example:before {
-  display: inline;
-  content: open-quote;
-}
-.example:after {
-  display: inline;
-  content: close-quote;
-}
+.fallacies .example:before { content: open-quote; }
+.fallacies .example:after { content: close-quote; }
 
-.fallacy-mind h2 { color: #754d29; }
-.fallacy-mind dl { background-color: #754d29; }
+.long-text { word-break: break-all; }
 
+/* ícones */
 #anonymous-authority dt:before { background-image: url(i_auth1.png); }
 #authority dt:before { background-image: url(i_auth2.png); }
 #sheep dt:before { background-image: url(i_sheep.png); }
@@ -102,11 +128,6 @@ dd {
 #pop dt:before { background-image: url(i_pop.png); }
 #prob dt:before { background-image: url(i_prob.png); }
 #tradition dt:before { background-image: url(i_tradition.png); }
-
-
-.fallacy-emotion h2 { color: #ea2227; }
-.fallacy-emotion dl { background-color: #ea2227; }
-
 #consequences dt:before { background-image: url(i_consequences.png); }
 #fear dt:before { background-image: url(i_fear.png); }
 #flattery dt:before { background-image: url(i_flattery.png); }
@@ -115,10 +136,6 @@ dd {
 #ridicule dt:before { background-image: url(i_ridicule.png); }
 #spite dt:before { background-image: url(i_spite.png); }
 #wishful dt:before { background-image: url(i_wishful.png); }
-
-.fallacy-deduction h2 { color: #918ac1; }
-.fallacy-deduction dl { background-color: #918ac1; }
-
 #anecdote dt:before { background-image: url(i_anecdote.png); }
 #composition dt:before { background-image: url(i_composition.png); }
 #decomposition dt:before { background-image: url(i_decomposition.png); }
@@ -132,10 +149,6 @@ dd {
 #spotlight dt:before { background-image: url(i_spotlight.png); }
 #sweeping-generalization dt:before { background-image: url(i_sweeping-generalization.png); }
 #undistributed-middle dt:before { background-image: url(i_undistributed-middle.png); }
-
-.fallacy-content h2 { color: #5eab8a; }
-.fallacy-content dl { background-color: #5eab8a; }
-
 #ad-hoc-rescue dt:before { background-image: url(i_ad-hoc-rescue.png); }
 #biased-generalization dt:before { background-image: url(i_biased-generalization.png); }
 #confirmation-bias dt:before { background-image: url(i_confirmation-bias.png); }
@@ -146,10 +159,6 @@ dd {
 #slippery dt:before { background-image: url(i_slippery.png); }
 #suppressed-evidence dt:before { background-image: url(i_suppressed-evidence.png); }
 #unfalsifiability dt:before { background-image: url(i_unfalsifiability.png); }
-
-.fallacy-causes h2 { color: #eb008b; }
-.fallacy-causes dl { background-color: #eb008b; }
-
 #consequent dt:before { background-image: url(i_consequent.png); }
 #circular dt:before { background-image: url(i_circular.png); }
 #cum-hoc dt:before { background-image: url(i_cum-hoc.png); }
@@ -157,10 +166,6 @@ dd {
 #common-cause dt:before { background-image: url(i_common-cause.png); }
 #post-hoc dt:before { background-image: url(i_post-hoc.png); }
 #wrongs dt:before { background-image: url(i_wrongs.png); }
-
-.fallacy-attack h2 { color: #188dcd; }
-.fallacy-attack dl { background-color: #188dcd; }
-
 #ad-hominem dt:before { background-image: url(i_ad-hominem.png); }
 #proof dt:before { background-image: url(i_proof.png); }
 #circumstantial-ad-hominem dt:before { background-image: url(i_circumstantial-ad-hominem.png); }
@@ -168,21 +173,12 @@ dd {
 #association dt:before { background-image: url(i_association.png); }
 #strawman dt:before { background-image: url(i_strawman.png); }
 
-/**
- * On wider screens we can show two columns side by side.
- */
-@media (min-width: 64em) {
-  section {
-    min-width: 10rem;
-    max-width: 33%;
-  }
+@media (min-width: 48em) {
+  .toolbar { position: sticky; top: 0; z-index: 2; }
 }
-@media print and (orientation: landscape) {
-  html {
-    font-size: 12pt;
-  }
-  section {
-    min-width: 50%;
-    max-width: 50%;
-  }
+
+@media print {
+  .fallacies { --bg: #fff; --card: #fff; --fg: #000; --muted: #333; }
+  .toolbar { display: none; }
+  .fallacies dl { break-inside: avoid; border: 1px solid #999; border-top: 4px solid var(--c); }
 }

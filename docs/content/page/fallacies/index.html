@@ -6,11 +6,6 @@ url: "/fallacies"
 description: "Erros e manipulações em retórica e pensamento lógico"
 custom_css: ["main.css"]
 ---
-<style>
-main article.mw7 {
-  max-width: 100rem;
-}
-</style>
 <p class="subtitle">
   Erros e manipulações em retórica e pensamento lógico
 </p>
@@ -20,7 +15,8 @@ main article.mw7 {
     http://www.informationisbeautiful.net/2012/rhetological-fallacies/
   </a>.
 </p>
-<div class="container">
+<link rel="stylesheet" href="main.css">
+<div class="fallacies" id="fallacies">
   <section class="fallacy fallacy-mind">
     <h2>Apelo à mente</h2>
     <dl id="anonymous-authority">
@@ -491,8 +487,64 @@ Internet pelo autor ou retirados do maravilhoso
   <a href="https://github.com/dukejeffrie/dukejeffrie.github.io/issues">conte para mim</a>.
 </p>
 <script>
-  const l = document.createElement('link')
-  l.setAttribute("rel", "stylesheet")
-  l.setAttribute("href", "main.css")
-  document.head.appendChild(l)
+  // Busca, filtro por categoria e links diretos. Sem JS a página continua legível.
+  (function () {
+    const root = document.getElementById('fallacies')
+    const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    const sections = [...root.querySelectorAll('section')]
+    const items = [...root.querySelectorAll('dl')].map(dl => ({ dl, text: norm(dl.textContent) }))
+    const active = new Set()
+
+    const bar = document.createElement('div')
+    bar.className = 'toolbar'
+    bar.setAttribute('role', 'search')
+    bar.innerHTML = '<input type="search" aria-label="Buscar falácia" placeholder="Buscar falácia, definição ou exemplo…">'
+    const input = bar.firstChild
+    sections.forEach(s => {
+      const cls = s.className.match(/fallacy-\w+/)[0]
+      const b = document.createElement('button')
+      b.type = 'button'
+      b.className = 'chip ' + cls
+      b.setAttribute('aria-pressed', 'false')
+      b.textContent = s.querySelector('h2').textContent
+      b.onclick = () => {
+        active.has(s) ? active.delete(s) : active.add(s)
+        b.setAttribute('aria-pressed', active.has(s))
+        apply()
+      }
+      bar.appendChild(b)
+    })
+    const count = document.createElement('span')
+    count.className = 'count'
+    count.setAttribute('aria-live', 'polite')
+    bar.appendChild(count)
+    const empty = document.createElement('p')
+    empty.className = 'empty'
+    empty.hidden = true
+    empty.textContent = 'Nenhuma falácia encontrada.'
+    root.prepend(bar)
+    root.appendChild(empty)
+
+    function apply() {
+      const q = norm(input.value.trim())
+      let n = 0
+      items.forEach(({ dl, text }) => {
+        const s = dl.parentElement
+        const show = (!active.size || active.has(s)) && text.includes(q)
+        dl.hidden = !show
+        n += show
+      })
+      sections.forEach(s => { s.hidden = !s.querySelector('dl:not([hidden])') })
+      count.textContent = n + ' de ' + items.length
+      empty.hidden = n > 0
+    }
+    input.addEventListener('input', apply)
+
+    // nome da falácia vira link para ela mesma (#id), copiável da barra de endereço
+    items.forEach(({ dl }) => {
+      const dt = dl.querySelector('dt')
+      dt.innerHTML = '<a href="#' + dl.id + '">' + dt.innerHTML + '</a>'
+    })
+    apply()
+  })()
 </script>
