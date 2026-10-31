@@ -1,30 +1,7 @@
 /* Homenagem ao pôster "Rhetological Fallacies" de informationisbeautiful.net:
    seis famílias de cor, um círculo-ícone por falácia.
-   As cores de fundo e de texto seguem o tema (variáveis --color-neutral-* do
-   blowfish, classe "dark" no <html>); os valores depois da vírgula são o
-   fallback para quando a página roda fora do tema. */
-
-.fallacies {
-  --bg: rgb(var(--color-neutral, 255, 255, 255));
-  --card: rgb(var(--color-neutral-100, 241, 245, 249));
-  --card-hi: rgb(var(--color-neutral-200, 226, 232, 240));
-  --line: rgb(var(--color-neutral-300, 203, 213, 225));
-  --fg: rgb(var(--color-neutral-900, 15, 23, 42));
-  --muted: rgb(var(--color-neutral-600, 71, 85, 105));
-  color: var(--fg);
-  margin: 1.5rem 0;
-  line-height: 1.5;
-}
-html.dark .fallacies {
-  --bg: rgb(var(--color-neutral-800, 30, 41, 59));
-  --card: rgb(var(--color-neutral-900, 15, 23, 42));
-  --card-hi: rgb(var(--color-neutral-700, 51, 65, 85));
-  --line: rgb(var(--color-neutral-600, 71, 85, 105));
-  --fg: rgb(var(--color-neutral-50, 248, 250, 252));
-  --muted: rgb(var(--color-neutral-300, 203, 213, 225));
-}
-.fallacies a { color: inherit; }
-.fallacies [hidden] { display: none; }
+   Fundo e texto seguem o tema (variáveis --color-neutral-* do blowfish e classe
+   "dark" no <html>); os valores depois da vírgula valem fora do tema. */
 
 .fallacy-mind      { --c: #754d29; --on: #fff; }
 .fallacy-emotion   { --c: #ea2227; --on: #fff; }
@@ -34,179 +11,227 @@ html.dark .fallacies {
 .fallacy-attack    { --c: #188dcd; --on: #111; }
 html.dark .fallacy-mind { --c: #a8713f; } /* o marrom original some no fundo escuro */
 
-/* barra de busca e filtros (criada pelo script) */
-.toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.75rem 0;
-  margin-bottom: 0.5rem;
-  background: var(--bg);
-}
-.toolbar input[type=search] {
-  flex: 1 1 14rem;
-  padding: 0.5rem 0.8rem;
-  font: inherit;
-  color: var(--fg);
-  background: var(--card);
-  border: 2px solid var(--line);
-  border-radius: 2rem;
-}
-.toolbar input[type=search]:focus-visible { outline: 3px solid var(--fg); outline-offset: 1px; }
-.chip {
-  font: inherit;
-  font-size: 0.9em;
-  color: var(--fg);
-  background: transparent;
-  border: 2px solid var(--c);
-  border-radius: 2rem;
-  padding: 0.25rem 0.8rem;
-  cursor: pointer;
-}
-.chip[aria-pressed=true] { background: var(--c); color: var(--on); font-weight: bold; }
-.chip:focus-visible { outline: 3px solid var(--fg); outline-offset: 1px; }
-.count { color: var(--muted); font-size: 0.9em; margin-left: auto; }
-.empty { color: var(--muted); text-align: center; padding: 2rem 0; }
-
-/* seções e cartões */
-.fallacies section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-.fallacies h2 {
-  grid-column: 1 / -1;
-  margin: 0.5rem 0 0;
-  padding-left: 0.6rem;
-  border-left: 0.5rem solid var(--c);
-  font-size: 1.6em;
-  font-weight: normal;
-  color: var(--fg);
-}
-.fallacies dl {
-  margin: 0;
-  padding: 1rem;
-  background: var(--card);
-  border-top: 4px solid var(--c);
-  border-radius: 0 1em 0 0;
-  scroll-margin-top: 5rem;
-}
-.fallacies dl:target { outline: 3px solid var(--c); background: var(--card-hi); }
-.fallacies dt {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 0 0 0.5rem;
-  font-size: 1.2em;
-  font-weight: bold;
-  line-height: 1.2;
-}
-.fallacies dt, .fallacies dt a, .fallacies h2 { color: var(--fg); }
-.fallacies dt a { text-decoration: none; }
-.fallacies dt a:hover, .fallacies dt a:focus-visible { text-decoration: underline; }
-.fallacies dt:before {
-  content: "";
-  flex: none;
-  width: 3.5rem;
-  height: 3.5rem;
-  box-sizing: border-box;
-  border: 4px solid #fff;
-  border-radius: 50%;
-  background: var(--c) center / contain no-repeat;
-}
-.fallacies dd { margin: 0; color: var(--muted); }
-.fallacies .example {
-  margin: 0.6rem 0 0;
-  padding-left: 0.7rem;
-  border-left: 3px solid var(--c);
-  color: var(--fg);
-  font-style: italic;
-}
-.fallacies .example:before { content: open-quote; }
-.fallacies .example:after { content: close-quote; }
-
-.fallacies details { margin-top: 0.75rem; }
-.fallacies summary {
-  cursor: pointer;
-  color: var(--fg);
-  font-size: 0.9em;
-  font-weight: bold;
-}
-.fallacies summary::marker { color: var(--c); }
-.fallacies summary:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
-.fallacies details[open] summary { margin-bottom: 0.5rem; }
-.fallacies .why { margin: 0; color: var(--fg); }
-.fallacies .see { margin: 0.75rem 0 0; font-size: 0.9em; color: var(--muted); }
-.fallacies .see a { text-decoration: underline; }
-.fallacies .reply { margin: 0.75rem 0 0; }
-.fallacies .reply:before { content: "Como responder: "; font-weight: bold; color: var(--fg); }
-
 .long-text { word-break: break-all; }
 
-/* ícones */
-#anonymous-authority dt:before { background-image: url(i_auth1.png); }
-#authority dt:before { background-image: url(i_auth2.png); }
-#sheep dt:before { background-image: url(i_sheep.png); }
-#ignorance dt:before { background-image: url(i_ignor.png); }
-#incredulity dt:before { background-image: url(i_incred.png); }
-#money dt:before { background-image: url(i_money.png); }
-#novel dt:before { background-image: url(i_novel.png); }
-#pop dt:before { background-image: url(i_pop.png); }
-#prob dt:before { background-image: url(i_prob.png); }
-#tradition dt:before { background-image: url(i_tradition.png); }
-#consequences dt:before { background-image: url(i_consequences.png); }
-#fear dt:before { background-image: url(i_fear.png); }
-#flattery dt:before { background-image: url(i_flattery.png); }
-#nature dt:before { background-image: url(i_nature.png); }
-#pity dt:before { background-image: url(i_pity.png); }
-#ridicule dt:before { background-image: url(i_ridicule.png); }
-#spite dt:before { background-image: url(i_spite.png); }
-#wishful dt:before { background-image: url(i_wishful.png); }
-#anecdote dt:before { background-image: url(i_anecdote.png); }
-#composition dt:before { background-image: url(i_composition.png); }
-#decomposition dt:before { background-image: url(i_decomposition.png); }
-#design dt:before { background-image: url(i_design.png); }
-#gambler dt:before { background-image: url(i_gambler.png); }
-#hasty-generalization dt:before { background-image: url(i_hasty-generalization.png); }
-#conclusions dt:before { background-image: url(i_conclusions.png); }
-#middle-ground dt:before { background-image: url(i_middle-ground.png); }
-#perfectionist dt:before { background-image: url(i_perfectionist.png); }
-#relativist dt:before { background-image: url(i_relativist.png); }
-#spotlight dt:before { background-image: url(i_spotlight.png); }
-#sweeping-generalization dt:before { background-image: url(i_sweeping-generalization.png); }
-#undistributed-middle dt:before { background-image: url(i_undistributed-middle.png); }
-#ad-hoc-rescue dt:before { background-image: url(i_ad-hoc-rescue.png); }
-#biased-generalization dt:before { background-image: url(i_biased-generalization.png); }
-#confirmation-bias dt:before { background-image: url(i_confirmation-bias.png); }
-#false-dilemma dt:before { background-image: url(i_false-dilemma.png); }
-#lie dt:before { background-image: url(i_lie.png); }
-#vividness dt:before { background-image: url(i_vividness.png); }
-#herring dt:before { background-image: url(i_herring.png); }
-#slippery dt:before { background-image: url(i_slippery.png); }
-#suppressed-evidence dt:before { background-image: url(i_suppressed-evidence.png); }
-#unfalsifiability dt:before { background-image: url(i_unfalsifiability.png); }
-#consequent dt:before { background-image: url(i_consequent.png); }
-#circular dt:before { background-image: url(i_circular.png); }
-#cum-hoc dt:before { background-image: url(i_cum-hoc.png); }
-#antecedent dt:before { background-image: url(i_antecedent.png); }
-#common-cause dt:before { background-image: url(i_common-cause.png); }
-#post-hoc dt:before { background-image: url(i_post-hoc.png); }
-#wrongs dt:before { background-image: url(i_wrongs.png); }
-#ad-hominem dt:before { background-image: url(i_ad-hominem.png); }
-#proof dt:before { background-image: url(i_proof.png); }
-#circumstantial-ad-hominem dt:before { background-image: url(i_circumstantial-ad-hominem.png); }
-#genetic dt:before { background-image: url(i_genetic.png); }
-#association dt:before { background-image: url(i_association.png); }
-#strawman dt:before { background-image: url(i_strawman.png); }
+.fallacies {
+  --bg: rgb(var(--color-neutral, 255, 255, 255));
+  --card: rgb(var(--color-neutral-100, 241, 245, 249));
+  --card-hi: rgb(var(--color-neutral-200, 226, 232, 240));
+  --line: rgb(var(--color-neutral-300, 203, 213, 225));
+  --fg: rgb(var(--color-neutral-900, 15, 23, 42));
+  --muted: rgb(var(--color-neutral-600, 71, 85, 105));
+  --bar: 4px;       /* traço de destaque do exemplo */
+  --r: 0.75rem;     /* raio dos cartões */
 
-@media (min-width: 48em) {
-  .toolbar { position: sticky; top: 0; z-index: 2; }
+  color: var(--fg);
+  margin-block: 1.5rem;
+  line-height: 1.5;
+
+  a { color: inherit; }
+  [hidden] { display: none; }
+
+  /* barra de busca e filtros (criada pelo script) */
+  .toolbar {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    padding-block: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--bg);
+
+    input[type=search] {
+      flex: 1 1 14rem;
+      padding: 0.5rem 0.8rem;
+      font: inherit;
+      color: var(--fg);
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 2rem;
+    }
+  }
+  .chip {
+    font: inherit;
+    font-size: 0.9em;
+    color: var(--fg);
+    background: transparent;
+    border: 2px solid var(--c);
+    border-radius: 2rem;
+    padding: 0.25rem 0.8rem;
+    cursor: pointer;
+
+    &:hover { background: color-mix(in srgb, var(--c) 18%, transparent); }
+    &[aria-pressed=true] { background: var(--c); color: var(--on); font-weight: bold; }
+  }
+  :is(input, .chip, summary):focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+  .count { color: var(--muted); font-size: 0.9em; margin-left: auto; }
+  .empty { color: var(--muted); text-align: center; padding: 2rem 0; }
+
+  /* seções e cartões */
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    background: color-mix(in srgb, var(--c) 9%, transparent); /* painel tingido pela categoria */
+  }
+  h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--fg);
+    text-wrap: balance;
+  }
+
+  dl {
+    margin: 0;
+    padding: 1rem;
+    background: var(--card);
+    border: 2px solid var(--c);
+    border-radius: var(--r);
+    scroll-margin-top: 5rem;
+    position: relative;
+
+    /* cartão aberto por link (#id): sobe um pouco, na frente dos vizinhos */
+    &:target {
+      z-index: 1;
+      background: var(--card-hi);
+      box-shadow: 0 0.6rem 1.5rem color-mix(in srgb, var(--c) 45%, transparent);
+    }
+  }
+  dt {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.2;
+    text-wrap: balance;
+    color: var(--fg);
+
+    a { color: var(--fg); text-decoration: none; }
+    a:is(:hover, :focus-visible) { text-decoration: underline; }
+
+    &::before {
+      content: "";
+      flex: none;
+      width: 3.5rem;
+      aspect-ratio: 1;
+      box-sizing: border-box;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--c); /* anel externo: o branco sozinho some no tema claro */
+      border-radius: 50%;
+      background: var(--c) var(--icon, none) center / contain no-repeat;
+    }
+  }
+  dd { margin: 0; padding: 0; color: var(--muted); text-wrap: pretty; }
+
+  .example {
+    margin: 0.6rem 0 0;
+    padding-inline-start: 0.7rem;
+    border-inline-start: var(--bar) solid var(--c);
+    color: var(--fg);
+    font-style: italic;
+
+    &::before { content: open-quote; }
+    &::after { content: close-quote; }
+  }
+
+  /* "Entenda melhor" */
+  details { margin-top: 0.75rem; }
+  summary { cursor: pointer; color: var(--fg); font-size: 0.9em; font-weight: bold; }
+  summary::marker { color: var(--c); }
+  details[open] summary { margin-bottom: 0.5rem; }
+  .why { margin: 0; color: var(--fg); text-wrap: pretty; }
+  .see { margin: 0.75rem 0 0; font-size: 0.9em; color: var(--muted); a { text-decoration: underline; } }
+  .reply {
+    margin: 0.75rem 0 0;
+    &::before { content: "Como responder: "; font-weight: bold; color: var(--fg); }
+  }
 }
 
+html.dark .fallacies {
+  --bg: rgb(var(--color-neutral-800, 30, 41, 59));
+  --card: rgb(var(--color-neutral-900, 15, 23, 42));
+  --card-hi: rgb(var(--color-neutral-700, 51, 65, 85));
+  --line: rgb(var(--color-neutral-600, 71, 85, 105));
+  --fg: rgb(var(--color-neutral-50, 248, 250, 252));
+  --muted: rgb(var(--color-neutral-300, 203, 213, 225));
+}
+
+@media (max-width: 47.99em) {
+  .fallacies section { padding: 0.5rem; }
+}
+@media (min-width: 48em) {
+  .fallacies .toolbar { position: sticky; top: 0; z-index: 2; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fallacies :is(dl, .chip) { transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+  .fallacies dl:target { transform: scale(1.03); }
+}
 @media print {
   .fallacies, html.dark .fallacies { --bg: #fff; --card: #fff; --fg: #000; --muted: #333; --line: #999; }
-  .toolbar { display: none; }
-  .fallacies dl { break-inside: avoid; border: 1px solid #999; border-top: 4px solid var(--c); }
+  .fallacies .toolbar { display: none; }
+  .fallacies dl { break-inside: avoid; }
 }
+
+/* ícones: um por falácia, lidos pelo círculo do título */
+#anonymous-authority { --icon: url(i_auth1.png); }
+#authority { --icon: url(i_auth2.png); }
+#sheep { --icon: url(i_sheep.png); }
+#ignorance { --icon: url(i_ignor.png); }
+#incredulity { --icon: url(i_incred.png); }
+#money { --icon: url(i_money.png); }
+#novel { --icon: url(i_novel.png); }
+#pop { --icon: url(i_pop.png); }
+#prob { --icon: url(i_prob.png); }
+#tradition { --icon: url(i_tradition.png); }
+#consequences { --icon: url(i_consequences.png); }
+#fear { --icon: url(i_fear.png); }
+#flattery { --icon: url(i_flattery.png); }
+#nature { --icon: url(i_nature.png); }
+#pity { --icon: url(i_pity.png); }
+#ridicule { --icon: url(i_ridicule.png); }
+#spite { --icon: url(i_spite.png); }
+#wishful { --icon: url(i_wishful.png); }
+#anecdote { --icon: url(i_anecdote.png); }
+#composition { --icon: url(i_composition.png); }
+#decomposition { --icon: url(i_decomposition.png); }
+#design { --icon: url(i_design.png); }
+#gambler { --icon: url(i_gambler.png); }
+#hasty-generalization { --icon: url(i_hasty-generalization.png); }
+#conclusions { --icon: url(i_conclusions.png); }
+#middle-ground { --icon: url(i_middle-ground.png); }
+#perfectionist { --icon: url(i_perfectionist.png); }
+#relativist { --icon: url(i_relativist.png); }
+#spotlight { --icon: url(i_spotlight.png); }
+#sweeping-generalization { --icon: url(i_sweeping-generalization.png); }
+#undistributed-middle { --icon: url(i_undistributed-middle.png); }
+#ad-hoc-rescue { --icon: url(i_ad-hoc-rescue.png); }
+#biased-generalization { --icon: url(i_biased-generalization.png); }
+#confirmation-bias { --icon: url(i_confirmation-bias.png); }
+#false-dilemma { --icon: url(i_false-dilemma.png); }
+#lie { --icon: url(i_lie.png); }
+#vividness { --icon: url(i_vividness.png); }
+#herring { --icon: url(i_herring.png); }
+#slippery { --icon: url(i_slippery.png); }
+#suppressed-evidence { --icon: url(i_suppressed-evidence.png); }
+#unfalsifiability { --icon: url(i_unfalsifiability.png); }
+#consequent { --icon: url(i_consequent.png); }
+#circular { --icon: url(i_circular.png); }
+#cum-hoc { --icon: url(i_cum-hoc.png); }
+#antecedent { --icon: url(i_antecedent.png); }
+#common-cause { --icon: url(i_common-cause.png); }
+#post-hoc { --icon: url(i_post-hoc.png); }
+#wrongs { --icon: url(i_wrongs.png); }
+#ad-hominem { --icon: url(i_ad-hominem.png); }
+#proof { --icon: url(i_proof.png); }
+#circumstantial-ad-hominem { --icon: url(i_circumstantial-ad-hominem.png); }
+#genetic { --icon: url(i_genetic.png); }
+#association { --icon: url(i_association.png); }
+#strawman { --icon: url(i_strawman.png); }
