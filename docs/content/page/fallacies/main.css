@@ -1,9 +1,6 @@
 /* Homenagem ao pôster "Rhetological Fallacies" de informationisbeautiful.net:
    fundo escuro, seis famílias de cor, um círculo-ícone por falácia. */
 
-/* blowfish limita o artigo a ~65ch; aqui a grade precisa de mais espaço */
-.article-content:has(.fallacies) { max-width: none; }
-
 .fallacies {
   --bg: #15171f;
   --card: #232736;
